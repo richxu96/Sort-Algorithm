@@ -50,7 +50,7 @@ using namespace std;
 
 mergesort::mergesort()
 {
-	cout << "mergesort class has been made!\n";
+	cout << "a mergesort class has been made!\n";
 }
 
 mergesort::~mergesort()
