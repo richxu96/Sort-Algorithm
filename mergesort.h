@@ -1,9 +1,3 @@
-//#pragma once
-//#include<vector>
-//using namespace std;
-//void SWAP(int *x, int *y);
-//
-//void SORT(vector<int>obj);
 #include<iostream>
 using namespace std;
 

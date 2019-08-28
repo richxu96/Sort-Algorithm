@@ -1,45 +1,3 @@
-//#include<iostream>
-//#include<algorithm>
-//#include<vector>
-//#include<sstream>
-//
-//
-//using namespace std;
-//
-//void SWAP(int *x, int *y)
-//{
-//	int temp;
-//	temp = *x;
-//	*x = *y;
-//	*y = temp;
-//}
-//
-//
-//void SORT(int *arr, int size)
-//{
-//	for (int i = 0; i < size - 1; i++)
-//	{
-//		for (int j = 0; j < size - 1 - i; j++)
-//		{
-//			if (arr[j] > arr[j + 1])
-//			{
-//				SWAP(&arr[j], &arr[j + 1]);
-//			}
-//		}
-//	}
-//}
-//
-//int main()
-//{
-//	int a[5] = { 3,2,5,8,1 };
-//	SORT(a,sizeof(a)/sizeof(int));
-//	for (int i = 0; i < 5; i++)
-//	{
-//		cout << a[i] << endl;
-//
-//	}
-//	system("pause");
-//}
 #include"sort.h"
 #include<iostream>
 #include<fstream>
@@ -120,7 +78,7 @@ void mergesort::Mergesort(double *arr, int lowerindex, int higherindex)
 int main()
 {
 	ifstream read;
-	read.open("INF.txt");
+	read.open("data.txt");
 	char ch[30];
 	double arr[34100];
 	int i = 0;
