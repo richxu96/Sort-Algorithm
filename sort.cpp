@@ -1,11 +1,11 @@
-#include"mergesort.h"
+#include"sort.h"
 #include<iostream>
 #include<fstream>
 #include<cstdlib>
 
 using namespace std;
 
-mergesort::mergesort()
+sort::sort()
 {
 	double array[21] = { 3,2,5,5,3,9.9,4,66,9,52,3669,5,2,6,7,0,3,5.0,0.7,3,0.2 };
 	this->arr = array;
@@ -15,7 +15,7 @@ mergesort::mergesort()
     cout << "a default mergesort class has been made!\n";
 }
 
-mergesort::mergesort(double *array, int Size)
+sort::sort(double *array, int Size)
 {
 	this->arr = array;
 	this->size = Size;
@@ -23,12 +23,12 @@ mergesort::mergesort(double *array, int Size)
 	this->higherindex = this->size-1;
 }
 
-mergesort::~mergesort()
+sort::~sort()
 {
         cout << "mergesort class has been destructed!\n";
 }
 
-void mergesort::merge(double *arr, int lowerindex, int higherindex)
+void sort::merge(double *arr, int lowerindex, int higherindex)
 {
         double *temp = new double[higherindex - lowerindex + 1];
         int i = lowerindex;
@@ -71,13 +71,13 @@ void mergesort::merge(double *arr, int lowerindex, int higherindex)
         delete temp;
 }
 
-void mergesort::Mergesort(double *arr, int lowerindex, int higherindex)
+void sort::mergesort(double *arr, int lowerindex, int higherindex)
 {
         if (lowerindex < higherindex)
         {
                 int mid = lowerindex + (higherindex - lowerindex) / 2;
-                Mergesort(arr, lowerindex, mid);
-                Mergesort(arr, mid + 1, higherindex);
+                mergesort(arr, lowerindex, mid);
+                mergesort(arr, mid + 1, higherindex);
                 merge(arr, lowerindex, higherindex);
         }
         else
@@ -87,14 +87,36 @@ void mergesort::Mergesort(double *arr, int lowerindex, int higherindex)
 
 }
 
-void mergesort::show()
+void sort::swap(double *x, double *y)
 {
-	Mergesort(this->arr, 0, this->size - 1);
-	int length = this->size;
-	for(int i = 0; i<length; i++)
+	double temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
+
+void sort::bubblesort(double *arr, int size)
+{
+	for (int i = 0; i < size-2; i++)
 	{
-		cout << arr[i] << endl;
+		for (int j = 0; j < size-1-i; j++)
+		{
+			if (*(arr + j) > *(arr + j + 1))
+			{
+				this->swap(arr + j, arr + j + 1);
+			}
+		}
 	}
+}
+
+void sort::bubblesort()
+{
+	this->bubblesort(this->arr, this->size);
+}
+
+void sort::Mergesort()
+{
+	mergesort(this->arr, 0, this->size - 1);
 }
 
 
