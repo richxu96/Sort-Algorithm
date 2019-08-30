@@ -6,5 +6,3 @@ you can easily get the running time difference between bubble method and mergeso
 
 data.txt : supplys the data that is needed for running the program. 
 
-
-£¡
