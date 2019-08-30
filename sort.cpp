@@ -109,7 +109,7 @@ void sort::bubblesort(double *arr, int size)
 	}
 }
 
-void sort::bubblesort()
+void sort::Bubblesort()
 {
 	this->bubblesort(this->arr, this->size);
 }
